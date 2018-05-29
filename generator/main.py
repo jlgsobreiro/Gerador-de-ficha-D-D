@@ -8,24 +8,26 @@ def Cumprimente():
 gui = Tk()
 
 gui.title("Py5 - Python + Tkinter")
-gui.geometry("400x300")
-texto = Text(gui, width=30, height=1)
-texto.pack()
+gui.geometry("600x400")
+
+txt = Entry(gui, width=10)
+txt.place(x=0, y=0)
+
 btn = Button(gui, text="Cumprimente", command=Cumprimente)
-btn.pack()
+btn.place(x=0, y=25)
 
 listaClasse = StringVar()
 comboClasse = ttk.Combobox(gui, textvariable=listaClasse,text="Classes")
 comboClasse["values"] = hg.classeLista()
-comboClasse.pack()
+comboClasse.place(x=0,y=50)
 
 listaRaca = StringVar()
 comboRaca = ttk.Combobox(gui, textvariable=listaRaca,text="Raca")
 comboRaca["values"] = hg.racaLista()
-comboRaca.pack()
+comboRaca.place(x=0,y=75)
 
 hello = StringVar()
 lbl = Label(gui, textvariable=hello)
-lbl.pack()
+lbl.place(x=0,y=100)
 
 gui.mainloop()
