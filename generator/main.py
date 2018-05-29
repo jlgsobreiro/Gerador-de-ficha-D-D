@@ -30,4 +30,22 @@ hello = StringVar()
 lbl = Label(gui, textvariable=hello)
 lbl.place(x=0,y=100)
 
+def rightOf(uiItem):
+    return uiItem.winfo_reqwidth()+uiItem.place_info()['x']
+def leftOf(uiItem):
+    return -uiItem.winfo_reqwidth()+uiItem.place_info()['x']
+def aboveOf(uiItem):
+    return uiItem.winfo_reqheight()+uiItem.place_info()['y']
+def underOf(uiItem):
+    return -uiItem.winfo_reqheight()+uiItem.place_info()['y']
+
+labelNome = Label(gui,text="Nome:")
+labelNome.place(x=30,y=0)
+print(labelNome.winfo_reqheight(),labelNome.place_info()['x'])
+labelClasse = Label(gui,text="Classe:")
+print(labelClasse.winfo_reqwidth())
+labelClasse.place(x=0,y=30)
+labelRaca = Label(gui,text="Raca:")
+print(labelRaca.winfo_reqwidth())
+labelRaca.place(x=0,y=60)
 gui.mainloop()
